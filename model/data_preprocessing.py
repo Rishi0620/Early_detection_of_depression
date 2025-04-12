@@ -7,7 +7,6 @@ from nltk.corpus import stopwords
 
 
 def preprocess_text(text):
-    # Check if text is NaN (float type) or not a string
     if not isinstance(text, str):
         return ""
 
@@ -23,7 +22,6 @@ def preprocess_text(text):
 def preprocess_data(input_file, output_file):
     df = pd.read_csv(input_file)
 
-    # Ensure the 'text' column exists and fill NaN values with empty strings
     if 'text' not in df.columns:
         raise ValueError("Input CSV must contain a 'text' column")
 
